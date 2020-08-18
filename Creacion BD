@@ -1,0 +1,83 @@
+
+/ * ============================================== ============== * /
+/ * BASE DE DATOS:Kinder                                              * /
+/ * ============================================== ============== * /
+1.- Creamos el usuario 
+
+ALTER SESSION SET "_ORACLE_SCRIPT"=true;
+
+create user ubdpinder identified by 123456
+default tablespace system temporary tablespace
+temp;
+
+grant dba to ubdpinder
+
+2.-Creamos nueva Conexion a Base de datos
+
+Name: Kinder
+Usuario: ubdpinder
+Contraseña: 123456
+Nombre del Host: 192.168.1.23
+Puerto:1521
+SID: XE
+
+/ * ============================================================ * /
+/ * Tabla: AREA DE APRENDIZAJE                                               * /
+/ * ============================================================ * /
+   
+
+CREATE TABLE Area_de_aprendizaje
+(
+    id number(10) NOT NULL,
+    nombre character(50),
+    capacidad number(18,0),
+    CONSTRAINT area_de_aprendizaje_pkey PRIMARY KEY (id)
+);
+
+/ * ============================================================ * /
+/ * Tabla: AREA DE APRENDIZAJE                                               * /
+/ * ============================================================ * /
+    
+
+CREATE TABLE Docente
+(
+    id number(10) NOT NULL,
+    nombre character(50),
+    apellido character(50),
+    direccion character(50),
+    telefono number(18,0),
+    area_de_aprendizaje character(50),
+    nivel_de_estudio character(80),
+    CONSTRAINT docente_pkey PRIMARY KEY (id)
+);
+
+/ * ============================================================ * /
+/ * Tabla: AREA DE APRENDIZAJE                                               * /
+/ * ============================================================ * /
+    
+CREATE TABLE Estudiante
+(
+    id number(10) NOT NULL,
+    nombre character(30),
+    apellido character(50),
+    edad number(18,0),
+    direccion character(50),
+    telefono number(18,0),
+    area_de_aprendizaje character(50),
+    CONSTRAINT estudiante_pkey PRIMARY KEY (id)
+);
+
+/ * ============================================================ * /
+/ * Tabla: AREA DE APRENDIZAJE                                               * /
+/ * ============================================================ * /
+    
+CREATE TABLE Padres_de_familia
+(
+    id number(10) NOT NULL,
+    nombre character(50),
+    apellido character(50),
+    telefono number(18,0),
+    direccion character(50),
+    estudiante character(50),
+    CONSTRAINT padres_de_familia_pkey PRIMARY KEY (id)
+);

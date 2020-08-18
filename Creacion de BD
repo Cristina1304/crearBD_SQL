@@ -1,0 +1,64 @@
+/ * BASE DE DATOS: KINDER                                               * /
+/ * ============================================================ * /
+
+CREATE DATABASE kinder
+        
+/ * ============================================================ * /
+/ * Tabla: AREA DE APRENDIZAJE                                               * /
+/ * ============================================================ * /
+    
+CREATE TABLE Area_de_aprendizaje
+(
+    id integer NOT NULL,
+    nombre character(50),
+    capacidad numeric(18,0),
+    CONSTRAINT area_de_aprendizaje_pkey PRIMARY KEY (id)
+)
+
+/ * ============================================================ * /
+/ * Tabla: DOCENTE                                              * /
+/ * ============================================================ * /
+
+CREATE TABLE Docente
+(
+    id integer NOT NULL,
+    nombre character(50),
+    apellido character(50),
+    direccion character(50),
+    telefono numeric(18,0),
+    area_de_aprendizaje character(50),
+    nivel_de_estudio character(80),
+    CONSTRAINT docente_pkey PRIMARY KEY (id)
+)
+
+/ * ============================================================ * /
+/ * Tabla: ESTUDIANTE                                                * /
+/ * ============================================================ * /
+
+CREATE TABLE Estudiante
+(
+    id integer NOT NULL,
+    nombre character(30),
+    apellido character(50),
+    edad numeric(18,0),
+    direccion character(50),
+    telefono numeric(18,0),
+    area_de_aprendizaje character(50),
+    CONSTRAINT estudiante_pkey PRIMARY KEY (id)
+)
+
+
+/ * ============================================================ * /
+/ * Tabla: PADRES DE FAMILIA                                                * /
+/ * ============================================================ * /
+
+CREATE TABLE Padres_de_familia
+(
+    id integer NOT NULL,
+    nombre character(50),
+    apellido character(50),
+    telefono numeric(18,0),
+    direccion character(50),
+    estudiante character(50),
+    CONSTRAINT padres_de_familia_pkey PRIMARY KEY (id)
+)

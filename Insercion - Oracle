@@ -1,0 +1,46 @@
+
+//Datos de la tabla Area de Aprendizaje//
+
+SELECT * FROM Area_de_Aprendizaje
+
+INSERT INTO Area_de_Aprendizaje VALUES ('1','Manualidades',' 10');
+INSERT INTO Area_de_Aprendizaje VALUES ('2','Numeros',' 10');
+INSERT INTO Area_de_Aprendizaje VALUES ('3','Lectura',' 10');
+INSERT INTO Area_de_Aprendizaje VALUES ('4','Juegos',' 10');
+
+//Datos de la tabla Docente //
+
+
+SELECT * FROM Docente
+
+INSERT INTO Docente VALUES ('1','Maria','Gutierrez','Los Geranios', '0954678934','Manualidades','Tercer Nivel');
+INSERT INTO Docente VALUES ('2','Erika','Fernandez','Jaramijo', '0945672345','Juegos','Tercer Nivel');
+INSERT INTO Docente VALUES ('3','Diana','Sanchez','San Pedro', '0987694563','Numeros','Tercer Nivel');
+INSERT INTO Docente VALUES ('4','Luisa','Castro','Urbirrios', '0967845361','Lectura','Tercer Nivel');
+
+//Datos de la tabla Estudiante//
+
+SELECT * FROM Estudiante
+
+INSERT INTO Estudiante VALUES ('1','Josthin','Coveña','3','Urbirrios1','0943178534','Manualidades');
+INSERT INTO Estudiante VALUES ('2','Michell','Cedeño','3','Cuba','0923451678','','Manualidades');
+INSERT INTO Estudiante VALUES ('3','Milena','Barcia','3','Cuba','0934521785','Lectura');
+INSERT INTO Estudiante VALUES ('4','Cristina','Fernandez','3','San Mateo','0932167843','Lectura');
+INSERT INTO Estudiante VALUES ('5','Jael','Bello','3','Las Galondrinas','0965803451','Numero');
+INSERT INTO Estudiante VALUES ('6','Santiago','Paz','3','Cuba','0954318650','Numero');
+INSERT INTO Estudiante VALUES ('7','Stefania','Burgos','3','24 de mayo','0936794367','Juegos');
+INSERT INTO Estudiante VALUES ('8','Charlie','Meza','3','Las flores','0954739674','Juegos');
+
+//Datos de la tabla Padres de Familia
+
+SELECT * FROM Padres_de_Familia
+
+INSERT INTO Padres_de_Familia VALUES ('1','Carolina','Basurto','0923451678','Cuba','Michell Cedeño');
+INSERT INTO Padres_de_Familia VALUES ('2','Juan','Gonzales','0934521785','Cuba','Milena Barcia');
+INSERT INTO Padres_de_Familia VALUES ('3','Alexandre','Soliz','0932167843','San Mateo','Cristina Fernandez');
+INSERT INTO Padres_de_Familia VALUES ('4','Jennifer','Quijije','0965803451','Las Golondrinas','Jael Bello');
+INSERT INTO Padres_de_Familia VALUES ('5','Alison','Castro','0943178534','Urbirrios 1','Josthin Coveña');
+INSERT INTO Padres_de_Familia VALUES ('6','Darlin','Delgado','0954318650','Cuba','Santiago Paz');
+INSERT INTO Padres_de_Familia VALUES ('7','Dilan','Navarrete','0936794367','24 de mayo','Stefania Burgos');
+INSERT INTO Padres_de_Familia VALUES ('8','Melanie','Jaime','0954739674','Las flores','Charlie Meza');
+

@@ -1,47 +1,71 @@
-CREATE DATABASE kinder
+/ * ============================================== ============== * /
+/ * BASE DE DATOS: KINDER                                               * /
+/ * ============================================== ============== * /
 
-CREATE TABLE Area_de_aprendizaje
+CREATE DATABASE kinder
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Spain.1252'
+    LC_CTYPE = 'Spanish_Spain.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+       
+/ * ============================================== ============== * /
+/ * Tabla: AREA DE APRENDIZAJE                                               * /
+/ * ============================================== ============== * /
+   
+CREATE TABLE public.area_de_aprendizaje
 (
     id integer NOT NULL,
-    nombre character(50),
+    nombre character(50) COLLATE pg_catalog."default",
     capacidad numeric(18,0),
     CONSTRAINT area_de_aprendizaje_pkey PRIMARY KEY (id)
 )
 
+/ * ============================================== ============== * /
+/ * Tabla: DOCENTE                                              * /
+/ * ============================================== ============== * /
 
-CREATE TABLE Docente
+CREATE TABLE public.docente
 (
     id integer NOT NULL,
-    nombre character(50),
-    apellido character(50),
-    direccion character(50),
+    nombre character(50) COLLATE pg_catalog."default",
+    apellido character(50) COLLATE pg_catalog."default",
+    direccion character(50) COLLATE pg_catalog."default",
     telefono numeric(18,0),
-    area_de_aprendizaje character(50),
-    nivel_de_estudio character(80),
+    area_de_aprendizaje character(50) COLLATE pg_catalog."default",
+    nivel_de_estudio character(80) COLLATE pg_catalog."default",
     CONSTRAINT docente_pkey PRIMARY KEY (id)
 )
 
+/ * ============================================== ============== * /
+/ * Tabla: ESTUDIANTE                                                * /
+/ * ============================================== ============== * /
 
-CREATE TABLE Estudiante
+CREATE TABLE public.estudiante
 (
     id integer NOT NULL,
-    nombre character(30),
-    apellido character(50),
+    nombre character(30) COLLATE pg_catalog."default",
+    apellido character(50) COLLATE pg_catalog."default",
     edad numeric(18,0),
-    direccion character(50),
+    direccion character(50) COLLATE pg_catalog."default",
     telefono numeric(18,0),
-    area_de_aprendizaje character(50),
+    area_de_aprendizaje character(50) COLLATE pg_catalog."default",
     CONSTRAINT estudiante_pkey PRIMARY KEY (id)
 )
 
+/ * ============================================== ============== * /
+/ * Tabla: PADRES DE FAMILIA                                                * /
+/ * ============================================== ============== * /
 
-CREATE TABLE Padres_de_familia
+CREATE TABLE public.padres_de_familia
 (
     id integer NOT NULL,
-    nombre character(50),
-    apellido character(50),
+    nombre character(50) COLLATE pg_catalog."default",
+    apellido character(50) COLLATE pg_catalog."default",
     telefono numeric(18,0),
-    direccion character(50),
-    estudiante character(50),
+    direccion character(50) COLLATE pg_catalog."default",
+    estudiante character(50) COLLATE pg_catalog."default",
     CONSTRAINT padres_de_familia_pkey PRIMARY KEY (id)
 )

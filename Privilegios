@@ -1,0 +1,32 @@
+/ * ============================================== ============== * /
+/ * BASE DE DATOS: KINDER                                               * /
+/ * ============================================== ============== * /
+
+/ * CREAR ROL */
+
+create role rol_reportes
+
+
+/ * CREAR LOGIN CON CONTRASEÑA */
+
+create login servidorenterprise with password='123456'
+
+
+/ *CREAR USUARIO */
+
+create user usuarioreporteador for login servidorenterprise
+
+
+/ * ALTERAR ROL rol_reportes  */
+
+alter role rol_reportes add member[usuarioreporteador];
+
+
+/ * REVOKE - eliminar privilegios de acceso  a mi rol rol_reportes */
+
+revoke insert to rol_reportes
+
+
+/ *  otorga SELECT permiso al rol rol_reports */
+
+grant select to rol_reportes

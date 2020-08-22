@@ -2,9 +2,6 @@
 / * BASE DE DATOS: KINDER                                               * /
 / * ============================================== ============== * /
 
-/ * CREAR ROL */
-
-create role rol_reportes
 
 
 / * CREAR LOGIN CON CONTRASEÑA */
@@ -15,6 +12,10 @@ create login servidorenterprise with password='123456'
 / *CREAR USUARIO EN MI LOGIN 'servidorenterprise'*/
 
 create user usuarioreporteador for login servidorenterprise
+
+/ * CREAR ROL */
+
+create role rol_reportes
 
 
 / * RELACIONAR ROL 'rol_reportes' CON EL USUARIO 'usuarioreporteador'  */

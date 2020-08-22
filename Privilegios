@@ -12,12 +12,12 @@ create role rol_reportes
 create login servidorenterprise with password='123456'
 
 
-/ *CREAR USUARIO */
+/ *CREAR USUARIO EN MI LOGIN 'servidorenterprise'*/
 
 create user usuarioreporteador for login servidorenterprise
 
 
-/ * ALTERAR ROL rol_reportes  */
+/ * RELACIONAR ROL 'rol_reportes' CON EL USUARIO 'usuarioreporteador'  */
 
 alter role rol_reportes add member[usuarioreporteador];
 

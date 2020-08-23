@@ -1,0 +1,35 @@
+/ * ============================================== ============== * /
+/ * BASE DE DATOS: KINDER                                               * /
+/ * ============================================== ============== * /
+
+
+
+
+/ * CREAR LOGIN CON CONTRASEÑA */
+
+create user servidorenterprise identified by 123456;
+
+
+/ *CREAR USUARIO */
+
+create user usuarioreporteador default user servidorenterprise;
+
+
+/ * CREAR ROL */
+
+create role rol_reportes;
+
+
+/ * Asignar un rol a un usuario  */
+
+alter user usuarioreporteador default role rol_reportes;
+
+
+/ * REVOKE - eliminar privilegios */
+
+revoke all insert from rol_reportes;
+
+
+/ *  otorga SELECT permiso al rol rol_reports */
+
+grant select to rol_reportes;
